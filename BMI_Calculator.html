@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin:10px 10px;
+        }
+        input{
+            height: 30px;
+            width: 250px;
+        }
+        label{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+
+       <div>
+        <label for="">Put your weight in here (KG)</label><br>
+        <input type="number" name="" id="weight">
+       </div>
+       <div>
+        <label for="">And your height in here (CM)</label><br>
+        <input type="number" name="" id="height">
+       </div>
+       <div><button>Calculate BMI</button></div>
+       <h1></h1>
+    </div>
+</body>
+</html>
+<script>
+
+    var btn=document.querySelectorAll("button");
+    btn[0].addEventListener('click',function(){
+        var weight=document.getElementById('weight')
+    var height=document.getElementById('height')
+    console.log(height)
+    var nw=Number(weight.value)
+    var nh=Number(height.value)
+    var mh=nh/100;
+    var squre=mh*mh
+    var BMI=nw/squre
+    console.log(BMI)
+    var st=BMI.toString()
+    var bag=""
+    for(var i=0;i<st.length;i++){
+        bag+=st[i]
+        if(st[i]=='.'){
+            bag+=st[i+1]
+            break
+            
+        }
+    }
+    var st="Your BMI is "+bag+" which means you are obese"
+    var h1=document.querySelector('h1')
+    h1.innerText=st;
+    console.log(bag)
+    })
+
+    
+</script>
