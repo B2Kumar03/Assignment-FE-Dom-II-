@@ -35,11 +35,12 @@
        </div>
        <div><button>Calculate BMI</button></div>
        <h1></h1>
+       <h2></h2>
     </div>
 </body>
 </html>
 <script>
-
+      
     var btn=document.querySelectorAll("button");
     btn[0].addEventListener('click',function(){
         var weight=document.getElementById('weight')
@@ -61,11 +62,17 @@
             
         }
     }
-    var st="Your BMI is "+bag+" which means you are obese"
-    var h1=document.querySelector('h1')
-    h1.innerText=st;
-    console.log(bag)
-    })
 
     
+    var st="Your BMI is "+bag+" which means you are obese"
+    var h1=document.querySelector('h2')
+    h1.innerText=st;
+    console.log(bag)
+    var h=document.querySelector(h2);
+     var get=localStorage.getItem("PreviousValue")
+     h.innerText=PreviousValue
+    localStorage.setItem("PreviousValue",bag)
+    
+    })
+     
 </script>
